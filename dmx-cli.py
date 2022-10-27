@@ -6,8 +6,9 @@ import sys
 
 try:
 	data = shared_memory.ShareableList(sequence=None, name='dmxdata')
-except:
+except Exception as error:
 	print("It seems like the server application isn't running :(")
+	print(error)
 	exit()
 
 
@@ -47,3 +48,5 @@ for i in range(len(args)):
 #data[0] = 0 #NEVER set data[0] to anything but 0 bc that's our DMX start byte. It would prevent your fixtures from reacting to the DMX stream
 data.shm.close()
 resource_tracker.unregister('/dmxdata', 'shared_memory') #unlinking resource_tracker to keep sharedmemory... else our dmx-server crashes
+
+
