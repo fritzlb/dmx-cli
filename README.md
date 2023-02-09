@@ -8,3 +8,5 @@ Start dmx-server.py and you should be able to control it by running dmx-cli.py. 
 
 
 In theory this should also run on other platforms with pyserial installed, maybe changing the serial port in dmx-server.py is required. I didn't test anything except for Pi 4 support.
+
+Now also part of homebridge-dmxplugin
